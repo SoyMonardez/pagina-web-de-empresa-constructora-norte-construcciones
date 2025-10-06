@@ -3,9 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Norte Construcciones - Soluciones en Ingeniería Civil</title>
+  
+  <title>Norte Construcciones | Ingeniería Civil y Arquitectura en Argentina | Proyectos de Obra Civil</title>
 
-  <!-- Tailwind -->
+  <meta name="description" content="Norte Construcciones ofrece soluciones integrales de ingeniería civil, arquitectura y obra pública. Expertos en pisos, drenajes y edificación en Argentina.">
+  
+  <link rel="canonical" href="https://www.norteconstrucciones.com.ar/">
+
+  <meta property="og:title" content="Norte Construcciones | Ingeniería Civil y Arquitectura">
+  <meta property="og:description" content="Especialistas en infraestructura urbana, edificación y obra civil de alta calidad en Argentina.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.norteconstrucciones.com.ar/">
+  <meta property="og:image" content="https://www.norteconstrucciones.com.ar/img/logo.jpg">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,17 +29,20 @@
             'text-dark': '#1f2937',
             'text-light': '#f9fafb'
           },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
+          fontFamily: { 
+            sans: ['Inter', 'sans-serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+            lora: ['Lora', 'serif'] 
+          }
         }
       }
     };
   </script>
 
-  <!-- Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-  <!-- Lucide (iconos lineales usados en el layout) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700;800&display=swap" rel="stylesheet" /> 
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Font Awesome para iconos sociales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
@@ -57,47 +70,87 @@
     .carousel .logo:hover { transform: scale(1.08); }
 
     /* Social icons small animation */
-    .social-icons i { transition: transform .22s ease, color .22s ease; }
-    .social-icons i:hover { transform: translateY(-4px) scale(1.15); }
+    .social-icons i { transition: transform .3s ease, color .3s ease; }
+    .social-icons i:hover { transform: rotate(10deg) scale(1.2); }
 
-    /* small helper to make carousel-track focusable for accessibility */
-    .carousel-track[tabindex] { outline: none; }
-    .social-icons i {
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-.social-icons i:hover {
-  transform: rotate(10deg) scale(1.2);
-}
+    /* Animation classes for scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    /* Estilos del Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      display: none; /* Oculto por defecto */
+      justify-content: center;
+      align-items: center;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 0.75rem;
+      max-width: 90%;
+      width: 500px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      position: relative;
+      transform: translateY(-50px);
+      opacity: 0;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+    .modal-overlay.active .modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
   </style>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body class="min-h-screen">
   <div id="app" class="relative">
 
     <header class="sticky top-0 z-50 bg-white shadow-lg">
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <a href="#hero" class="flex items-center space-x-3 group">
-          <div class="p-2 bg-primary-dark rounded-full transition-transform duration-300 group-hover:scale-110">
-            <!-- logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building-2"><path d="M6 22V11a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11"/><path d="M2 22h20"/></svg>
-          </div>
-          <span class="text-xl font-bold text-primary-dark tracking-wide">Norte Construcciones</span>
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <a href="#hero" class="flex items-center space-x-2 sm:space-x-4 group">
+            <div class="transition-transform duration-300 group-hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 30 30" fill="none" role="img" aria-label="Logo de Norte Construcciones">
+                    <image 
+                        href="logo.png" 
+                        x="0" 
+                        y="0" 
+                        height="30" 
+                        width="30" 
+                        preserveAspectRatio="xMidYMid meet"
+                    />
+                </svg>
+            </div>
+            <span class="text-xl sm:text-3xl font-extrabold font-lora text-primary-dark tracking-wide">Norte Construcciones</span>
         </a>
 
         <div class="hidden lg:flex items-center space-x-8">
-          <a href="#proyectos" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Proyectos</a>
-          <a href="#servicios" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Servicios</a>
-          <a href="#nosotros" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Nosotros</a>
-          <a href="#contacto" class="bg-primary-dark text-text-light px-6 py-2 rounded-lg hover:bg-primary-light transition duration-300 shadow-md">Contacto</a>
+            <a href="#proyectos" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Proyectos</a>
+            <a href="#servicios" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Servicios</a>
+            <a href="#nosotros" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Nosotros</a>
+            <a href="#contacto" class="bg-primary-dark text-text-light px-6 py-2 rounded-lg hover:bg-primary-light transition duration-300 shadow-md">Contacto</a>
         </div>
 
-        <button id="menu-button" class="lg:hidden p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-150" aria-label="Abrir menú">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu text-primary-dark"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <button id="menu-button" class="lg:hidden p-3 rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-150" aria-label="Abrir menú">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu text-primary-dark"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
         </button>
-      </nav>
-    </header>
+    </nav>
+</header>
 
-    <!-- Mobile sidebar -->
     <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white z-[60] shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden" role="dialog" aria-modal="true" aria-labelledby="menu-heading">
       <div class="p-6 h-full flex flex-col">
         <div class="flex justify-end mb-8">
@@ -116,13 +169,16 @@
     <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden lg:hidden" aria-hidden="true"></div>
 
     <main>
-      <!-- Hero -->
       <section id="hero" class="relative bg-primary-dark text-text-light pt-32 pb-24 md:pt-48 md:pb-36 overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-subtle-pattern"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div class="max-w-3xl">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">Construyendo el <span class="text-accent-blue">Futuro</span>, Ladrillo a Ladrillo.</h1>
-            <p class="text-xl mb-10 opacity-90">Somos Norte Construcciones, su socio de confianza para proyectos de ingeniería civil y arquitectura de alta calidad.</p>
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                Expertos en <span class="text-accent-blue">Construcción</span> y Obra Civil en Argentina.
+            </h1>
+            <p class="text-xl mb-10 opacity-90">
+                Somos Norte Construcciones, su socio de confianza para proyectos de ingeniería civil y arquitectura de alta calidad.
+            </p>
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="#contacto" class="bg-accent-blue text-primary-dark font-semibold px-8 py-3 rounded-xl hover:bg-blue-400 transition duration-300 shadow-lg transform hover:scale-[1.02]">Empezar un Proyecto</a>
               <a href="#proyectos" class="border-2 border-text-light text-text-light font-semibold px-8 py-3 rounded-xl hover:bg-primary-light transition duration-300 transform hover:scale-[1.02]">Ver Proyectos</a>
@@ -131,71 +187,148 @@
         </div>
       </section>
 
-      <!-- Proyectos -->
       <section id="proyectos" class="py-16 md:py-24 bg-background-light">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-4xl font-extrabold text-primary-dark text-center mb-12">Obras finalizadas</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- cards (ejemplos) -->
-            <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-primary-dark">
-              <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra1.jpg')"></div>
-              <div class="p-6 text-text-light flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold mb-2">Título del Proyecto 1</h3>
-                <p class="text-sm opacity-90 mb-4 flex-grow">Descripción breve de la obra realizada y su impacto en la comunidad o cliente.</p>
-                <a href="#" class="bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center hover:bg-blue-400 transition duration-300 mt-auto">Ver Detalles</a>
-              </div>
-            </div>
-            <!-- repetir otros 3 proyectos -->
-            <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-blue-800">
-              <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra2.jpg')"></div>
-              <div class="p-6 text-text-light flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold mb-2">Título del Proyecto 2</h3>
-                <p class="text-sm opacity-90 mb-4 flex-grow">Una descripción sobre el tipo de construcción o ingeniería aplicada.</p>
-                <a href="#" class="bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center hover:bg-blue-400 transition duration-300 mt-auto">Ver Detalles</a>
-              </div>
-            </div>
-            <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-amber-800">
-              <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra3.jpg')"></div>
-              <div class="p-6 text-text-light flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold mb-2">Título del Proyecto 3</h3>
-                <p class="text-sm opacity-90 mb-4 flex-grow">Resumen del desafío superado y la solución innovadora implementada.</p>
-                <a href="#" class="bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center hover:bg-blue-400 transition duration-300 mt-auto">Ver Detalles</a>
-              </div>
-            </div>
-            <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-gray-600">
-              <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra4.jpg')"></div>
-              <div class="p-6 text-text-light flex flex-col flex-grow">
-                <h3 class="text-2xl font-bold mb-2">Título del Proyecto 4</h3>
-                <p class="text-sm opacity-90 mb-4 flex-grow">Breve descripción que resalte la calidad y el acabado final.</p>
-                <a href="#" class="bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center hover:bg-blue-400 transition duration-300 mt-auto">Ver Detalles</a>
-              </div>
-            </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-extrabold text-primary-dark text-center mb-12 reveal">Obras finalizadas: Proyectos de Ingeniería Civil</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-primary-dark reveal" style="transition-delay: 0.1s;">
+          <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra1.jpg')" role="img" aria-label="Construcción de pisos de alto tráfico en área de recreación."></div>
+          <div class="p-6 text-text-light flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-2">Pisos y Áreas de Recreación</h3>
+            <p class="text-sm opacity-90 mb-4 flex-grow" data-detail="Construcción de pisos de alto tráfico y renovación de áreas de esparcimiento público.">Construcción de pisos de alto tráfico y renovación de áreas de esparcimiento público.</p>
+            <button data-work-id="1" class="show-modal bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center 
+              transition duration-300 mt-auto shadow-md hover:bg-primary-dark hover:text-text-light hover:shadow-xl hover:ring-2 hover:ring-offset-2 hover:ring-text-light">Ver Detalles</button>
           </div>
-          <div class="text-center mt-12"><a href="#" class="inline-block bg-primary-dark text-text-light px-8 py-3 rounded-lg hover:bg-primary-light transition duration-300 shadow-md font-medium transform hover:scale-[1.02]">Ver más obras</a></div>
         </div>
-      </section>
+        
+        <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-blue-800 reveal" style="transition-delay: 0.2s;">
+           <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra2.jpg')" role="img" aria-label="Sistema de canalización y drenajes revestidos para agua pluvial."></div>
+          <div class="p-6 text-text-light flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-2">Canalización y Drenajes</h3>
+            <p class="text-sm opacity-90 mb-4 flex-grow" data-detail="Estructuras hídricas revestidas para el manejo eficiente del agua pluvial o de riego.">Estructuras hídricas revestidas para el manejo eficiente del agua pluvial o de riego.</p>
+            <button data-work-id="2" class="show-modal bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center 
+              transition duration-300 mt-auto shadow-md hover:bg-primary-dark hover:text-text-light hover:shadow-xl hover:ring-2 hover:ring-offset-2 hover:ring-text-light">Ver Detalles</button>
+          </div>
+        </div>
+        
+        <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-amber-800 reveal" style="transition-delay: 0.3s;">
+           <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra3.jpg')" role="img" aria-label="Construcción de pérgola de madera en área de paisajismo."></div>
+          <div class="p-6 text-text-light flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-2">Pérgolas y Paisajismo</h3>
+            <p class="text-sm opacity-90 mb-4 flex-grow" data-detail="Construcción de estructuras de sombra y diseño de áreas verdes.">Construcción de estructuras de sombra y diseño de áreas verdes.</p>
+            <button data-work-id="3" class="show-modal bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center 
+              transition duration-300 mt-auto shadow-md hover:bg-primary-dark hover:text-text-light hover:shadow-xl hover:ring-2 hover:ring-offset-2 hover:ring-text-light">Ver Detalles</button>
+          </div>
+        </div>
+        
+        <div class="group rounded-xl overflow-hidden card-shadow hover:shadow-2xl transition duration-300 min-h-64 flex flex-col bg-gray-600 reveal" style="transition-delay: 0.4s;">
+           <div class="relative flex-grow h-64 bg-cover bg-center rounded-t-xl" style="background-image:url('/img/obra4.jpg')" role="img" aria-label="Edificio modular de hormigón para uso público."></div>
+          <div class="p-6 text-text-light flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-2">Edificación Pública</h3>
+            <p class="text-sm opacity-90 mb-4 flex-grow" data-detail="Construcción modular en hormigón para edificios o infraestructura de servicio público.">Construcción modular en hormigón para edificios o infraestructura de servicio público.</p>
+            <button data-work-id="4" class="show-modal bg-accent-blue text-primary-dark font-medium px-4 py-2 rounded-lg text-center 
+              transition duration-300 mt-auto shadow-md hover:bg-primary-dark hover:text-text-light hover:shadow-xl hover:ring-2 hover:ring-offset-2 hover:ring-text-light">Ver Detalles</button>
+          </div>
+        </div>
+        
+      </div>
+      <div class="text-center mt-12 reveal" style="transition-delay: 0.5s;"><a href="html/obras.html" class="inline-block bg-primary-dark text-text-light px-8 py-3 rounded-lg hover:bg-primary-light transition duration-300 shadow-md font-medium transform hover:scale-[1.02]">Ver más obras</a></div>
+    </div>
+  </section>
 
-      <!-- Nosotros -->
+      <div id="work-detail-modal" class="modal-overlay">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+          <div class="flex justify-between items-start border-b pb-3 mb-4">
+            <h3 id="modal-title" class="text-3xl font-bold text-primary-dark"></h3>
+            <button id="close-modal-button" class="p-2 rounded-full hover:bg-gray-100 transition duration-150" aria-label="Cerrar detalles">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x text-primary-dark"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+          </div>
+          <p id="modal-description" class="text-lg text-gray-700 leading-relaxed mb-6"></p>
+          <button id="modal-cta" class="w-full bg-primary-dark text-text-light font-semibold px-6 py-3 rounded-lg hover:bg-primary-light transition duration-300 shadow-md transform hover:scale-[1.01]">
+            Entendido
+          </button>
+        </div>
+      </div>
       <section id="nosotros" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div class="bg-white p-8 rounded-xl card-shadow">
-              <h2 class="text-3xl font-bold text-primary-dark mb-4 border-b-2 border-primary-light pb-2">¿Quiénes somos?</h2>
-              <p class="text-lg text-gray-700 leading-relaxed">Somos una empresa dedicada a la construcción y gestión de proyectos de infraestructura de alta calidad... </p>
-            </div>
-            <div class="bg-white p-8 rounded-xl card-shadow">
-              <h2 class="text-3xl font-bold text-primary-dark mb-4 border-b-2 border-primary-light pb-2">Nuestro recorrido profesional</h2>
-              <p class="text-lg text-gray-700 leading-relaxed">Nuestra trayectoria es un testimonio de compromiso y crecimiento constante...</p>
-            </div>
-          </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-primary-dark mb-4 reveal">Conoce Norte Construcciones: Especialistas en Obra Civil</h2>
+            <p class="text-xl text-gray-600 reveal" style="transition-delay: 0.1s;">Más que constructores, somos socios estratégicos en tu visión.</p>
         </div>
-      </section>
 
-      <!-- Socios / Carrusel infinito -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            <div class="lg:col-span-2 bg-white p-8 md:p-10 rounded-xl card-shadow flex flex-col justify-start reveal" style="transition-delay: 0.2s;">
+                <div class="flex items-center text-primary-dark mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-building mr-3">
+                        <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                        <path d="M9 22v-4h6v4" />
+                        <path d="M12 2v20" />
+                        <path d="M16 8h2" />
+                        <path d="M16 12h2" />
+                    </svg>
+                    <h3 class="text-3xl font-bold">¿Quiénes somos?</h3>
+                </div>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+    Somos <span class="text-primary-dark font-bold">Norte Construcciones</span>, una empresa dedicada a la <span class="text-accent-blue font-semibold">construcción y gestión de proyectos de infraestructura de alta calidad</span>. Nos especializamos en soluciones integrales de <span class="text-accent-blue font-semibold">ingeniería civil y arquitectura en Argentina</span>, desde la concepción hasta la entrega final. Nuestro enfoque está en la innovación, la sostenibilidad y el cumplimiento riguroso de los plazos y presupuestos.
+</p>
+                <p class="text-lg text-gray-700 leading-relaxed border-l-4 border-accent-blue pl-4 italic">
+                    "Transformamos ideas en estructuras sólidas que impulsan el progreso de la región."
+                </p>
+            </div>
+
+            <div class="lg:col-span-1 bg-primary-dark p-8 md:p-10 rounded-xl card-shadow text-text-light flex flex-col space-y-8 reveal" style="transition-delay: 0.4s;">
+                <div class="flex items-center border-b border-primary-light pb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-zap-lightning-text-accent-blue mr-3">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                    <h3 class="text-3xl font-bold">Trayectoria</h3>
+                </div>
+                
+                <div class="flex flex-col space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-calendar-alt text-2xl text-accent-blue mt-1"></i>
+                        <div>
+                            <p class="text-4xl font-extrabold font-montserrat text-accent-blue">
+                                +15</p>
+                            <p class="text-lg opacity-90">Años de experiencia en el sector</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-hard-hat text-2xl text-accent-blue mt-1"></i>
+                        <div>
+                            <p class="text-4xl font-extrabold font-montserrat text-accent-blue">30+</p>
+                            <p class="text-lg opacity-90">Proyectos completados con éxito</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <i class="fa-solid fa-handshake text-2xl text-accent-blue mt-1"></i>
+                        <div>
+                            <p class="text-4xl font-extrabold font-montserrat text-accent-blue">98%</p>
+                            <p class="text-lg opacity-90">Satisfacción del cliente</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#proyectos" class="mt-4 bg-accent-blue text-primary-dark font-semibold px-6 py-3 rounded-lg hover:bg-blue-400 transition duration-300 text-center shadow-md">
+                    Ver Nuestro Portafolio
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
       <section id="socios" class="py-16 md:py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 class="text-xl md:text-2xl font-semibold text-gray-600 mb-10">Orgullosos de trabajar con el gobierno y empresas líderes de la región.</h3>
-          <div class="carousel relative">
+          <h3 class="text-xl md:text-2xl font-semibold text-gray-600 mb-10 reveal">Orgullosos de trabajar con el gobierno y empresas líderes de la región.</h3>
+          <div class="carousel relative reveal" style="transition-delay: 0.1s;">
             <div class="carousel-track" tabindex="0">
               <div class="carousel-group flex items-center gap-8 md:gap-12">
                 <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo A</div>
@@ -204,7 +337,6 @@
                 <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo D</div>
                 <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo E</div>
               </div>
-              <!-- duplicado -->
               <div class="carousel-group flex items-center gap-8 md:gap-12" aria-hidden="true">
                 <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo A</div>
                 <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo B</div>
@@ -214,31 +346,58 @@
               </div>
             </div>
           </div>
-          <div class="mt-12"><hr class="border-gray-300 max-w-lg mx-auto"></div>
+          <div class="mt-12 reveal" style="transition-delay: 0.2s;"><hr class="border-gray-300 max-w-lg mx-auto"></div>
         </div>
       </section>
 
-      <!-- Servicios (omitido detalle por brevedad) -->
       <section id="servicios" class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-4xl font-extrabold text-primary-dark mb-12">Nuestros servicios</h2>
-          <div class="flex flex-wrap justify-center gap-8 md:gap-16">
-            <!-- ejemplo de servicios -->
-            <div class="w-40 flex flex-col items-center text-center group"><div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4"></div><h4 class="text-lg font-semibold text-text-dark">Construcción Industrial</h4></div>
-            <div class="w-40 flex flex-col items-center text-center group"><div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4"></div><h4 class="text-lg font-semibold text-text-dark">Edificación Civil</h4></div>
-            <div class="w-40 flex flex-col items-center text-center group"><div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4"></div><h4 class="text-lg font-semibold text-text-dark">Proyectos Ecológicos</h4></div>
-            <div class="w-40 flex flex-col items-center text-center group"><div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4"></div><h4 class="text-lg font-semibold text-text-dark">Remodelaciones</h4></div>
-          </div>
-        </div>
-      </section>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h2 class="text-4xl font-extrabold text-primary-dark mb-12 reveal">Nuestros Servicios Esenciales</h2>
+    
+    <div class="flex flex-wrap justify-center gap-8 md:gap-16">
 
-      <!-- Contacto -->
+      <div class="w-40 flex flex-col items-center text-center group reveal" style="transition-delay: 0.1s;">
+        <div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4 flex items-center justify-center 
+                    group-hover:bg-primary-dark group-hover:border-accent-blue transition duration-300">
+          <i class="fa-solid fa-person-digging text-4xl text-primary-dark group-hover:text-text-light transition duration-300"></i>
+        </div>
+        <h4 class="text-lg font-semibold text-text-dark">Infraestructura Urbana & Obra Civil</h4>
+      </div>
+
+      <div class="w-40 flex flex-col items-center text-center group reveal" style="transition-delay: 0.2s;">
+        <div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4 flex items-center justify-center 
+                    group-hover:bg-primary-dark group-hover:border-accent-blue transition duration-300">
+          <i class="fa-solid fa-city text-4xl text-primary-dark group-hover:text-text-light transition duration-300"></i>
+        </div>
+        <h4 class="text-lg font-semibold text-text-dark">Edificación Residencial y No Residencial</h4>
+      </div>
+
+      <div class="w-40 flex flex-col items-center text-center group reveal" style="transition-delay: 0.3s;">
+        <div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4 flex items-center justify-center 
+                    group-hover:bg-primary-dark group-hover:border-accent-blue transition duration-300">
+          <i class="fa-solid fa-tree-city text-4xl text-primary-dark group-hover:text-text-light transition duration-300"></i>
+        </div>
+        <h4 class="text-lg font-semibold text-text-dark">Desarrollo de Espacios Públicos</h4>
+      </div>
+
+      <div class="w-40 flex flex-col items-center text-center group reveal" style="transition-delay: 0.4s;">
+        <div class="w-24 h-24 p-6 border-2 border-primary-dark rounded-full mb-4 flex items-center justify-center 
+                    group-hover:bg-primary-dark group-hover:border-accent-blue transition duration-300">
+          <i class="fa-solid fa-faucet-drip text-4xl text-primary-dark group-hover:text-text-light transition duration-300"></i>
+        </div>
+        <h4 class="text-lg font-semibold text-text-dark">Sistemas de Agua y Riego</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
       <section id="contacto" class="py-16 md:py-24">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 class="text-4xl font-extrabold text-primary-dark text-center mb-12">Contacto</h2>
+                    <h2 class="text-4xl font-extrabold text-primary-dark text-center mb-12 reveal">Contacto</h2>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 rounded-xl card-shadow">
-                        <!-- Formulario de Contacto -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white p-8 rounded-xl card-shadow reveal" style="transition-delay: 0.1s;">
                         <div>
                             <h3 class="text-3xl font-bold text-primary-dark mb-6">Habla con nosotros</h3>
                             <form action="#" method="POST" class="space-y-4">
@@ -261,7 +420,6 @@
                             </form>
                         </div>
 
-                        <!-- Información de Contacto -->
                         <div class="p-4 md:p-8 border-l border-gray-200 md:border-t-0 border-t pt-8 md:pt-0">
                             <h3 class="text-3xl font-bold text-primary-dark mb-6">Redes y Contacto</h3>
                             <p class="text-gray-700 mb-8">
@@ -329,9 +487,61 @@
 
     </main>
 
-    <footer class="bg-primary-dark text-text-light py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm"><p>&copy; 2025 Norte Construcciones. Todos los derechos reservados.</p></div>
-    </footer>
+    <footer id="contacto" class="bg-primary-dark text-white py-12 md:py-16 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/20 pb-10 mb-10">
+        
+        <!-- Columna 1: Logo y Descripción -->
+        <div>
+          <h4 class="text-2xl font-extrabold mb-4">Norte Construcciones</h4>
+          <p class="text-sm opacity-80">
+            Liderando la ingeniería civil y la arquitectura en Argentina. Calidad, compromiso y visión de futuro en cada proyecto.
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación Rápida -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Enlaces Rápidos</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/index.html" class="hover:text-accent-blue transition duration-150">Inicio</a></li>
+            <li><a href="/html/obras.html" class="text-accent-blue font-bold">Nuestras Obras</a></li>
+            <li><a href="/index.html#servicios" onclick="showToast('Sección de Servicios no implementada')" class="hover:text-accent-blue transition duration-150">Servicios</a></li>
+            <!-- Enlace de Contacto en Footer ACTUALIZADO -->
+            <li><a href="#contacto" class="hover:text-accent-blue transition duration-150">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Servicios Destacados -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Especialidades</h5>
+          <ul class="space-y-2 text-sm opacity-80">
+            <li>Ingeniería Civil</li>
+            <li>Arquitectura Corporativa</li>
+            <li>Infraestructura Vial</li>
+            <li>Sistemas de Drenaje</li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Contáctanos</h5>
+          <p class="text-sm space-y-2">
+            <!-- Email de Contacto Principal ACTUALIZADO -->
+            <span class="block">Email: <a href="mailto:norteconstruccionesinfo@gmail.com" class="hover:text-accent-blue">norteconstrucciones@gmail.com</a></span>
+            <span class="block">Teléfono: (011) 5555-1234</span>
+            <span class="block">Dirección: Av. Principal 123, San Juan, Argentina</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Derechos de Autor -->
+      <div class="text-center pt-8">
+        <p class="text-xs opacity-70">&copy; 2025 Norte Construcciones.</p>
+      </div>
+
+    </div>
+  </footer>
+
 
   </div>
 
@@ -341,15 +551,71 @@
       const closeButton = document.getElementById('close-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const menuOverlay = document.getElementById('menu-overlay');
+      
+      // Modal elements
+      const modal = document.getElementById('work-detail-modal');
+      const closeModalButtons = document.querySelectorAll('#close-modal-button, #modal-cta');
+      const showModalButtons = document.querySelectorAll('.show-modal');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDescription = document.getElementById('modal-description');
 
-      // muestra el sidebar sólo después de cargar para evitar flash
+      // Muestra el sidebar sólo después de cargar para evitar flash
       if (mobileMenu) mobileMenu.style.display = 'block';
 
       if (menuButton) menuButton.addEventListener('click', ()=>{ mobileMenu.classList.remove('translate-x-full'); mobileMenu.classList.add('translate-x-0'); menuOverlay.classList.remove('hidden'); });
       if (closeButton) closeButton.addEventListener('click', ()=>{ mobileMenu.classList.remove('translate-x-0'); mobileMenu.classList.add('translate-x-full'); menuOverlay.classList.add('hidden'); });
       if (menuOverlay) menuOverlay.addEventListener('click', ()=>{ mobileMenu.classList.remove('translate-x-0'); mobileMenu.classList.add('translate-x-full'); menuOverlay.classList.add('hidden'); });
 
-      // make carousel-track focusable and pause on focus
+      // Cierra el menú móvil al hacer clic en un enlace del menú
+      const mobileLinks = document.querySelectorAll('#mobile-menu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          menuOverlay.classList.add('hidden');
+        });
+      });
+
+      // Lógica para abrir el modal
+      showModalButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          // Encuentra la tarjeta contenedora
+          const card = e.target.closest('.group');
+          // Obtiene el título y la descripción
+          const title = card.querySelector('h3').textContent.trim();
+          // Usa el atributo data-detail del párrafo para la descripción exacta
+          const description = card.querySelector('p[data-detail]').getAttribute('data-detail'); 
+
+          // Rellena el modal
+          modalTitle.textContent = title;
+          modalDescription.textContent = description;
+
+          // Muestra el modal
+          modal.style.display = 'flex';
+          // Agrega la clase 'active' con un ligero retraso para permitir la transición CSS
+          setTimeout(() => { modal.classList.add('active'); }, 10);
+        });
+      });
+      
+      // Lógica para cerrar el modal
+      closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          modal.classList.remove('active');
+          // Oculta el modal después de la transición
+          setTimeout(() => { modal.style.display = 'none'; }, 300);
+        });
+      });
+
+      // Cierra el modal al hacer clic en el overlay
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          setTimeout(() => { modal.style.display = 'none'; }, 300);
+        }
+      });
+
+
+      // Hace que carousel-track sea enfocable y se pause en el foco
       const track = document.querySelector('.carousel-track');
       if (track) {
         track.setAttribute('tabindex', '0');
@@ -357,15 +623,15 @@
         track.addEventListener('blur', ()=>{ track.style.animationPlayState = 'running'; });
       }
 
-      // init lucide
+
+      // Inicia Lucide icons
       if (window.lucide) lucide.createIcons();
     });
   </script>
 
 <script>
+// Función de utilidad para copiar al portapapeles
 function copyToClipboard(text) {
-  // We use document.execCommand('copy') as navigator.clipboard.writeText()
-  // might not work in all environments (like iframes).
   const tempInput = document.createElement('input');
   tempInput.value = text;
   document.body.appendChild(tempInput);
@@ -379,6 +645,39 @@ function copyToClipboard(text) {
   document.body.appendChild(toast);
   setTimeout(() => toast.remove(), 2000);
 }
+
+// Lógica de animaciones al hacer scroll (Scroll Reveal)
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtiene todos los elementos con la clase 'reveal'
+    const revealElements = document.querySelectorAll('.reveal');
+
+    // 2. Opciones para el Intersection Observer
+    const observerOptions = {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Activa cuando el 10% del elemento es visible
+    };
+
+    // 3. Callback que se ejecuta cuando un elemento cruza el umbral
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Si está visible, activa la clase 'active' para la animación
+                entry.target.classList.add('active');
+                // Deja de observar el elemento una vez animado
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    // 4. Crea el observador
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // 5. Observa cada elemento
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
+});
 </script>
 <style>
 @keyframes fade {

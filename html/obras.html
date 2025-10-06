@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Norte Construcciones | Todas Nuestras Obras y Proyectos Completos</title>
+
+  <meta name="description" content="Explora la galería completa de proyectos de ingeniería civil y arquitectura de Norte Construcciones en Argentina.">
+  
+  <link rel="canonical" href="https://www.norteconstrucciones.com.ar/obras.html">
+
+  <meta property="og:title" content="Norte Construcciones | Galería de Obras">
+  <meta property="og:description" content="Mira todos los trabajos realizados por nuestro equipo de expertos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.norteconstrucciones.com.ar/obras.html">
+  <!-- Reemplaza con una imagen representativa de la galería de obras -->
+  <meta property="og:image" content="https://www.norteconstrucciones.com.ar/img/obras_hero.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Configuración de Tailwind para mantener los colores originales
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'primary-dark': '#5c0d18',
+            'primary-light': '#8d3e42',
+            'accent-blue': '#60a5fa', // Un azul claro de Tailwind
+            'bg-light': '#fefefe', // Fondo muy claro
+            'text-dark': '#1f2937', // Texto oscuro
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Fuente Inter desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- Estilos CSS personalizados para animaciones y Modal -->
+  <style>
+    /* Animación de entrada para el efecto Scroll Reveal */
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    /* Estilo para el header fijo */
+    .header-fixed {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    }
+    /* Estilo para el botón principal (Ver más obras) */
+    .btn-primary {
+        transition: background-color 0.3s, transform 0.2s;
+    }
+    .btn-primary:hover {
+        transform: translateY(-2px);
+    }
+    .btn-primary:active {
+        transform: translateY(0);
+    }
+    /* Estilo para el card de obra */
+    .project-card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px -3px rgba(92, 13, 24, 0.3), 0 4px 6px -4px rgba(92, 13, 24, 0.1);
+    }
+
+    /* Estilos para la Modal (oculto por defecto) */
+    #project-modal {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    #project-modal.open {
+      visibility: visible;
+      opacity: 1;
+    }
+    #modal-content {
+      transform: translateY(-50px);
+      transition: transform 0.3s ease-out;
+    }
+    #project-modal.open #modal-content {
+      transform: translateY(0);
+    }
+    /* Estilos para el Menú Móvil -- corregido: no forzar transform para no interferir con utilidades de Tailwind */
+    /* La posición la controlan las clases de Tailwind: translate-x-full / translate-x-0 */
+    #mobile-menu {
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+        /* no 'transform' aquí */
+        opacity: 1;
+    }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+  </style>
+  <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+
+<body class="font-sans bg-bg-light text-text-dark">
+
+ <!-- HEADER -->
+<header class="sticky top-0 z-50 bg-white shadow-lg">
+<nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+<a href="#" class="flex items-center space-x-3 group">
+<img src="/logo.png" alt="Logo Norte Construcciones" class="w-10 h-10">
+<span class="text-2xl sm:text-3xl font-extrabold text-primary-dark tracking-tight">Norte Construcciones</span>
+</a>
+
+
+<!-- NAV DESKTOP -->
+<div class="hidden lg:flex items-center space-x-8">
+<a href="/index.html" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Inicio</a>
+<a href="/html/obras.html" class="text-primary-dark font-bold border-b-2 border-primary-dark transition duration-200">Obras</a>
+<a href="/index.html#contacto" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">contacto</a>
+<a href="#solicitud" class="bg-primary-dark text-white px-5 py-2 rounded-lg hover:bg-primary-light transition duration-300 font-semibold shadow-md">Solicitar Cotización</a>
+</div>
+
+
+<!-- BOTÓN MENÚ MÓVIL -->
+<button id="menu-button" class="lg:hidden p-3 rounded-lg bg-gray-100 hover:bg-gray-200 transition duration-150" aria-label="Abrir menú">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu text-primary-dark">
+<line x1="4" y1="6" x2="20" y2="6" />
+<line x1="4" y1="12" x2="20" y2="12" />
+<line x1="4" y1="18" x2="20" y2="18" />
+</svg>
+</button>
+</nav>
+</header>
+
+
+<!-- MENÚ MÓVIL -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white z-[60] shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden" role="dialog" aria-modal="true">
+<div class="p-6 h-full flex flex-col">
+<div class="flex justify-end mb-8">
+<button id="close-menu-button" class="p-2 rounded-full hover:bg-gray-100 transition duration-150" aria-label="Cerrar menú">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x text-primary-dark">
+<path d="M18 6 6 18" />
+<path d="m6 6 12 12" />
+</svg>
+</button>
+</div>
+<nav class="flex flex-col space-y-4 flex-grow">
+<a href="/index.html" class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">Inicio</a>
+<a href="/html/obras.html" class="text-lg text-primary-dark font-bold p-2 rounded-lg bg-gray-100">Obras</a>
+<a href="/index.html" class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">Inicio</a>
+
+<a href="#solicitud" class="bg-primary-dark text-white text-center px-6 py-3 rounded-lg hover:bg-primary-light transition duration-300 mt-6 shadow-md text-lg font-semibold">Solicitar Cotización</a>
+</nav>
+</div>
+</div>
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden lg:hidden" aria-hidden="true"></div>
+
+  <main>
+    
+    <!-- Hero Section para la Galería de Obras -->
+    <section class="bg-primary-dark pt-20 pb-16 md:pt-28 md:pb-20 text-white reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight reveal">
+                Galería Completa de Obras
+            </h1>
+            <p class="text-xl sm:text-2xl font-light opacity-80 max-w-3xl mx-auto reveal">
+                Explora cada uno de nuestros proyectos de infraestructura, edificación y arquitectura a lo largo de Argentina.
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Galería de Proyectos (The Grid) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center text-text-dark mb-12 reveal">
+                Innovación y Calidad en Cada Detalle
+            </h2>
+
+            <!-- Grid de Obras -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                <!-- Tarjeta de Obra 1 (ID: 1) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal">
+                    <!-- Placeholder de imagen (reemplazar con URL real) -->
+                    <img id="img-1" src="https://placehold.co/800x600/5c0d18/ffffff?text=Proyecto+Residencial" 
+                         alt="Edificio de Viviendas de Lujo" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Edificio "Sol Naciente"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Córdoba, Argentina</p>
+                        <p class="text-gray-700 text-base">Desarrollo de 15 pisos con foco en sostenibilidad y eficiencia energética.</p>
+                        <button onclick="openModal(1)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 2 (ID: 2) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.1s;">
+                    <img id="img-2" src="https://placehold.co/800x600/8d3e42/ffffff?text=Vialidad+Ruta+3" 
+                         alt="Construcción de Autopista" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Ampliación de la Ruta Nacional 3</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Santa Cruz, Argentina</p>
+                        <p class="text-gray-700 text-base">Doble calzada y nuevos puentes para mejorar la conectividad y seguridad vial.</p>
+                        <button onclick="openModal(2)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 3 (ID: 3) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.2s;">
+                    <img id="img-3" src="https://placehold.co/800x600/5c0d18/ffffff?text=Sistema+de+Drenaje+Urbano" 
+                         alt="Instalación de Drenaje Pluvial" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Sistema de Desagües Pluviales "El Chaco"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Resistencia, Chaco</p>
+                        <p class="text-gray-700 text-base">Implementación de canales subterráneos para mitigar inundaciones urbanas.</p>
+                        <button onclick="openModal(3)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 4 (ID: 4) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.3s;">
+                    <img id="img-4" src="https://placehold.co/800x600/8d3e42/ffffff?text=Planta+Industrial" 
+                         alt="Construcción de Nave Industrial" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Nave Logística "Puerto Seco"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Mendoza, Argentina</p>
+                        <p class="text-gray-700 text-base">Construcción de un centro de distribución de 15.000 m² con altos estándares de seguridad.</p>
+                        <button onclick="openModal(4)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de Obra 5 (ID: 5) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.4s;">
+                    <img id="img-5" src="https://placehold.co/800x600/5c0d18/ffffff?text=Remodelacion+Corporativa" 
+                         alt="Remodelación de Oficinas" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Oficinas Corporativas "Torre Pampa"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Buenos Aires, CABA</p>
+                        <p class="text-gray-700 text-base">Rediseño interior de 5 plantas con enfoque en espacios colaborativos y tecnología.</p>
+                        <button onclick="openModal(5)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 6 (ID: 6) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.5s;">
+                    <img id="img-6" src="https://placehold.co/800x600/8d3e42/ffffff?text=Plaza+Pública" 
+                         alt="Construcción de Plaza" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Parque Urbano "Los Tilos"</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Rosario, Santa Fe</p>
+                        <p class="text-gray-700 text-base">Creación de un espacio verde de 2 hectáreas con equipamiento deportivo e infantil.</p>
+                        <button onclick="openModal(6)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 7 (ID: 7) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.6s;">
+                    <img id="img-7" src="https://placehold.co/800x600/5c0d18/ffffff?text=Cimientos+Especiales" 
+                         alt="Cimentación Profunda" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Cimientos para Torres Eólicas</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Puerto Madryn, Chubut</p>
+                        <p class="text-gray-700 text-base">Ejecución de bases de hormigón armado para parque de energía eólica.</p>
+                        <button onclick="openModal(7)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Obra 8 (ID: 8) -->
+                <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.7s;">
+                    <img id="img-8" src="https://placehold.co/800x600/8d3e42/ffffff?text=Puente+Vial" 
+                         alt="Construcción de Puente" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-primary-dark mb-2">Puente sobre el Río Paraná</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ubicación: Corrientes, Argentina</p>
+                        <p class="text-gray-700 text-base">Diseño y construcción de una estructura de 400 metros de extensión.</p>
+                        <button onclick="openModal(8)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                            Ver Detalles &rarr;
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Fin del Grid de Obras -->
+
+            <!-- CTA de final de página -->
+            <div class="mt-16 text-center reveal" style="transition-delay: 0.8s;" id="solicitud"> 
+                <p class="text-xl text-text-dark mb-4">¿Tienes un proyecto en mente? Hablemos de tus necesidades.</p>
+                <!-- BOTÓN PRINCIPAL DE CONTACTO ACTUALIZADO -->
+                <a 
+                  href="mailto:norteconstruccionesinfo@gmail.com"
+                  class="btn-primary inline-block bg-primary-dark text-white px-8 py-3 rounded-full text-lg font-semibold shadow-xl hover:bg-primary-light"
+                >
+                    Solicitar Cotización
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+  </main>
+
+  <!-- Modal de Detalles del Proyecto -->
+  <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-[100]" onclick="closeModal()">
+    
+    <div id="modal-content" class="bg-white rounded-xl shadow-2xl max-w-4xl w-full max-h-full overflow-y-auto" onclick="event.stopPropagation()">
+      
+        <!-- Imagen del Proyecto dentro de la Modal -->
+        <img id="modal-image" src="" alt="Imagen del proyecto" class="w-full h-64 object-cover rounded-t-xl">
+
+        <div class="p-6 md:p-8">
+            <!-- Título y Botón de Cierre -->
+            <div class="flex justify-between items-start mb-4">
+                <h2 id="modal-title" class="text-3xl font-bold text-primary-dark"></h2>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-primary-dark p-2 rounded-full transition duration-150" aria-label="Cerrar modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            
+            <!-- Ubicación -->
+            <p class="text-base text-gray-600 mb-4 border-b pb-2"><span class="font-semibold">Ubicación:</span> <span id="modal-location"></span></p>
+
+            <!-- Descripción Detallada -->
+            <div id="modal-description" class="text-gray-800 space-y-4">
+                <!-- El contenido se inyectará aquí -->
+            </div>
+
+            <!-- Botón de Contacto Rápido en Modal ACTUALIZADO -->
+            <div class="mt-8 text-center">
+                <a 
+                  href="mailto:norteconstruccionesinfo@gmail.com?subject=Consulta%20sobre%20el%20proyecto:%20${document.getElementById('modal-title').textContent}"
+                  class="btn-primary inline-block bg-accent-blue text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-600 shadow-lg"
+                >
+                    Me interesa este proyecto
+                </a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Fin Modal -->
+
+  <!-- Footer -->
+  <footer id="contacto" class="bg-primary-dark text-white py-12 md:py-16 reveal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/20 pb-10 mb-10">
+        
+        <!-- Columna 1: Logo y Descripción -->
+        <div>
+          <h4 class="text-2xl font-extrabold mb-4">Norte Construcciones</h4>
+          <p class="text-sm opacity-80">
+            Liderando la ingeniería civil y la arquitectura en Argentina. Calidad, compromiso y visión de futuro en cada proyecto.
+          </p>
+        </div>
+
+        <!-- Columna 2: Navegación Rápida -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Enlaces Rápidos</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/index.html" class="hover:text-accent-blue transition duration-150">Inicio</a></li>
+            <li><a href="/html/obras.html" class="text-accent-blue font-bold">Nuestras Obras</a></li>
+            <li><a href="/index.html#servicios" onclick="showToast('Sección de Servicios no implementada')" class="hover:text-accent-blue transition duration-150">Servicios</a></li>
+            <!-- Enlace de Contacto en Footer ACTUALIZADO -->
+            <li><a href="mailto:norteconstruccionesinfo@gmail.com" class="hover:text-accent-blue transition duration-150">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Servicios Destacados -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Especialidades</h5>
+          <ul class="space-y-2 text-sm opacity-80">
+            <li>Ingeniería Civil</li>
+            <li>Arquitectura Corporativa</li>
+            <li>Infraestructura Vial</li>
+            <li>Sistemas de Drenaje</li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div>
+          <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Contáctanos</h5>
+          <p class="text-sm space-y-2">
+            <!-- Email de Contacto Principal ACTUALIZADO -->
+            <span class="block">Email: <a href="mailto:norteconstruccionesinfo@gmail.com" class="hover:text-accent-blue">norteconstruccionesinfo@gmail.com</a></span>
+            <span class="block">Teléfono: (011) 5555-1234</span>
+            <span class="block">Dirección: Av. Principal 123, San Juan, Argentina</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Derechos de Autor -->
+      <div class="text-center pt-8">
+        <p class="text-xs opacity-70">&copy; 2025 Norte Construcciones.</p>
+      </div>
+
+    </div>
+  </footer>
+
+<!-- JavaScript para Utilidades y Animaciones -->
+<script>
+  // Datos detallados de los proyectos para la Modal
+  const projectsData = {
+    1: {
+        title: 'Edificio "Sol Naciente"',
+        location: 'Córdoba, Argentina',
+        image: 'https://placehold.co/800x600/5c0d18/ffffff?text=Edificio+Residencial+Cordoba',
+        details: [
+            '**Objetivo:** Desarrollar un complejo habitacional de alta gama que combine lujo y responsabilidad ambiental.',
+            '**Características:** 15 pisos, 60 unidades residenciales, certificación de eficiencia energética (LEED Silver). Incluye áreas comunes con piscina climatizada y gimnasio.',
+            '**Desafíos:** Integración de sistemas de captación de agua de lluvia y paneles solares en la estructura sin comprometer el diseño arquitectónico moderno.',
+            '**Resultado:** Un proyecto insignia que establece un nuevo estándar de vida vertical y sostenible en la región.',
+        ],
+    },
+    2: {
+        title: 'Ampliación de la Ruta Nacional 3',
+        location: 'Santa Cruz, Argentina (Tramo Río Gallegos - El Calafate)',
+        image: 'https://placehold.co/800x600/8d3e42/ffffff?text=Autopista+Ruta+3+Santa+Cruz',
+        details: [
+            '**Objetivo:** Aumentar la capacidad y seguridad de un tramo clave de la Ruta Nacional 3 mediante la construcción de una doble calzada.',
+            '**Características:** 120 km de extensión. Incluye la construcción de 4 nuevos puentes y la repavimentación completa del tramo existente.',
+            '**Desafíos:** Trabajar bajo condiciones climáticas extremas del sur argentino, coordinando la logística de materiales y manteniendo el flujo de tráfico durante la obra.',
+            '**Resultado:** Reducción del tiempo de viaje y de la tasa de siniestralidad en la zona, impulsando el turismo y el transporte de mercancías.',
+        ],
+    },
+    3: {
+        title: 'Sistema de Desagües Pluviales "El Chaco"',
+        location: 'Resistencia, Chaco',
+        image: 'https://placehold.co/800x600/5c0d18/ffffff?text=Canales+Pluviales+Resistencia',
+        details: [
+            '**Objetivo:** Mitigar las inundaciones estacionales en áreas urbanas críticas de Resistencia.',
+            '**Características:** Instalación de 5 km de ductos de hormigón armado de gran diámetro y construcción de una estación de bombeo de alta capacidad.',
+            '**Desafíos:** Trabajar en zonas de alto nivel freático y gestionar el desvío de servicios públicos subterráneos (gas, agua, electricidad).',
+            '**Resultado:** Protección de miles de hogares y comercios contra eventos pluviales intensos, mejorando la calidad de vida de la comunidad.',
+        ],
+    },
+    4: {
+        title: 'Nave Logística "Puerto Seco"',
+        location: 'Mendoza, Argentina',
+        image: 'https://placehold.co/800x600/8d3e42/ffffff?text=Centro+Distribucion+Mendoza',
+        details: [
+            '**Objetivo:** Diseñar y construir un centro de distribución moderno y eficiente para una importante empresa de logística.',
+            '**Características:** 15.000 m² de nave con altura libre de 12 metros, 20 muelles de carga y descarga, y oficinas administrativas integradas.',
+            '**Desafíos:** Cumplir con los plazos estrictos de entrega para el inicio de operaciones del cliente y asegurar un piso industrial de alta resistencia para montacargas pesados.',
+            '**Resultado:** Una instalación de distribución clave en la región Cuyo, optimizando las cadenas de suministro de nuestro cliente.',
+        ],
+    },
+    5: {
+        title: 'Oficinas Corporativas "Torre Pampa"',
+        location: 'Buenos Aires, CABA',
+        image: 'https://placehold.co/800x600/5c0d18/ffffff?text=Remodelacion+Oficinas+CABA',
+        details: [
+            '**Objetivo:** Remodelación integral de 5 plantas de un edificio corporativo para transformarlas en un espacio de trabajo flexible y moderno.',
+            '**Características:** Rediseño de interiores, instalación de nuevas redes de datos y eléctricas, y creación de zonas de descanso y colaboración.',
+            '**Desafíos:** Ejecutar la obra en un edificio ocupado, minimizando el impacto sonoro y logístico en las áreas adyacentes.',
+            '**Resultado:** Un ambiente de trabajo renovado que fomenta la productividad y el bienestar de los empleados.',
+        ],
+    },
+    6: {
+        title: 'Parque Urbano "Los Tilos"',
+        location: 'Rosario, Santa Fe',
+        image: 'https://placehold.co/800x600/8d3e42/ffffff?text=Parque+Urbano+Rosario',
+        details: [
+            '**Objetivo:** Recuperar un terreno baldío para crear un espacio público seguro y atractivo para la comunidad.',
+            '**Características:** 2 hectáreas de paisajismo, senderos peatonales, área de juegos infantiles con caucho reciclado y cancha deportiva multifuncional.',
+            '**Desafíos:** Coordinar con múltiples entidades gubernamentales y comunitarias, asegurando un diseño que refleje las necesidades del barrio.',
+            '**Resultado:** Un nuevo punto de encuentro social y recreativo, mejorando significativamente el entorno urbano.',
+        ],
+    },
+    7: {
+        title: 'Cimientos para Torres Eólicas',
+        location: 'Puerto Madryn, Chubut',
+        image: 'https://placehold.co/800x600/5c0d18/ffffff?text=Bases+Eolicas+Puerto+Madryn',
+        details: [
+            '**Objetivo:** Proveer las bases de cimentación robustas para la instalación de 10 aerogeneradores en un parque eólico.',
+            '**Características:** Excavación y vertido de bases masivas de hormigón armado de 18 metros de diámetro, capaces de soportar torres de 120 metros de altura.',
+            '**Desafíos:** El fuerte viento patagónico y la composición del suelo requirieron el uso de técnicas de cimentación profunda y monitoreo estructural constante.',
+            '**Resultado:** Cimientos sólidos que garantizan la estabilidad y operatividad a largo plazo de una fuente de energía renovable crucial.',
+        ],
+    },
+    8: {
+        title: 'Puente sobre el Río Paraná',
+        location: 'Corrientes, Argentina',
+        image: 'https://placehold.co/800x600/8d3e42/ffffff?text=Puente+Rio+Parana',
+        details: [
+            '**Objetivo:** Construir un puente de conexión vital para el transporte de mercancías y personas a través del Río Paraná.',
+            '**Características:** Estructura de vigas de hormigón postensado de 400 metros de longitud, con dos carriles por sentido y pasarela peatonal.',
+            '**Desafíos:** La navegación fluvial activa y la necesidad de trabajar con pilotes a gran profundidad en un entorno acuático complejo.',
+            '**Resultado:** Un nuevo acceso que reduce drásticamente los tiempos de transporte regional y fomenta el comercio.',
+        ],
+    }
+  };
+
+
+  /**
+   * Muestra un mensaje temporal tipo 'Toast' en la parte inferior de la pantalla.
+   * NOTA: Esta función ya no se usa para el contacto principal, sino para mensajes informativos.
+   * @param {string} message - El mensaje a mostrar.
+   */
+  function showToast(message) {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.className = 'fixed bottom-5 left-1/2 transform -translate-x-1/2 bg-primary-dark text-white px-5 py-3 rounded-lg shadow-2xl transition-opacity duration-300 opacity-0 z-[100]';
+    
+    // Añade el toast y espera un ciclo de evento para aplicar la transición de opacidad
+    document.body.appendChild(toast);
+    setTimeout(() => {
+        toast.style.opacity = '1';
+    }, 10);
+
+    // Oculta y remueve el toast después de 2 segundos
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 300); // Espera la transición de desvanecimiento
+    }, 2000);
+  }
+
+  /**
+   * Alterna la visibilidad del menú de navegación móvil.
+   */
+  function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const openIcon = document.getElementById('menu-icon-open');
+      const closeIcon = document.getElementById('menu-icon-close');
+      const body = document.body;
+      
+      const isMenuHidden = menu.classList.contains('hidden');
+
+      // Si el menú está oculto, lo mostramos y añadimos la clase 'open' para la animación
+      if (isMenuHidden) {
+          menu.classList.remove('hidden');
+          setTimeout(() => menu.classList.add('open'), 10);
+          body.style.overflow = 'hidden';
+          openIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+      } else {
+          // Si está abierto, quitamos la clase 'open' para animar el cierre, y luego lo ocultamos
+          menu.classList.remove('open');
+          body.style.overflow = '';
+          openIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          setTimeout(() => menu.classList.add('hidden'), 300); // Esperar la animación CSS
+      }
+  }
+
+
+  /**
+   * Abre la ventana modal cargando los detalles del proyecto.
+   * @param {number} projectId - El ID del proyecto (1 a 8).
+   */
+  function openModal(projectId) {
+    const project = projectsData[projectId];
+    
+    if (!project) {
+        showToast('Error: Proyecto no encontrado.');
+        return;
+    }
+
+    // Cargar datos en los elementos de la modal
+    document.getElementById('modal-title').textContent = project.title;
+    document.getElementById('modal-location').textContent = project.location;
+    document.getElementById('modal-image').src = project.image;
+    document.getElementById('modal-image').alt = project.title;
+    
+    // Configurar el enlace mailto en la modal
+    const mailtoLink = document.querySelector('#project-modal a.btn-primary');
+    const subject = encodeURIComponent(`Consulta sobre el proyecto: ${project.title}`);
+    mailtoLink.href = `mailto:norteconstruccionesinfo@gmail.com?subject=${subject}`;
+
+    // Generar la descripción a partir del array de detalles
+    const descriptionDiv = document.getElementById('modal-description');
+    descriptionDiv.innerHTML = ''; // Limpiar contenido anterior
+    
+    project.details.forEach(detail => {
+        const p = document.createElement('p');
+        // Reemplazar '**Texto**:' por <strong>Texto:</strong> para formato
+        p.innerHTML = detail.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        descriptionDiv.appendChild(p);
+    });
+
+    // Mostrar la modal
+    document.getElementById('project-modal').classList.add('open');
+    document.body.style.overflow = 'hidden'; // Evitar scroll en el cuerpo
+  }
+
+  /**
+   * Cierra la ventana modal.
+   */
+  function closeModal() {
+    document.getElementById('project-modal').classList.remove('open');
+    document.body.style.overflow = ''; // Habilitar scroll en el cuerpo
+  }
+
+
+  // Lógica de animaciones al hacer scroll (Scroll Reveal)
+  document.addEventListener('DOMContentLoaded', () => {
+      // 1. Obtiene todos los elementos con la clase 'reveal'
+      const revealElements = document.querySelectorAll('.reveal');
+
+      // 2. Opciones para el Intersection Observer
+      const observerOptions = {
+          root: null, // viewport
+          rootMargin: '0px',
+          threshold: 0.1 // Activa cuando el 10% del elemento es visible
+      };
+
+      // 3. Callback que se ejecuta cuando un elemento cruza el umbral
+      const observerCallback = (entries, observer) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  // Si está visible, activa la clase 'active' para la animación
+                  entry.target.classList.add('active');
+                  // Deja de observar el elemento una vez animado
+                  observer.unobserve(entry.target);
+              }
+          });
+      };
+
+      // 4. Crea el observador
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // 5. Observa cada elemento
+      revealElements.forEach(element => {
+          observer.observe(element);
+      });
+  });
+</script>
+<!-- SCRIPT NUEVO DEL MENÚ -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const menuButton = document.getElementById('menu-button');
+const closeButton = document.getElementById('close-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuOverlay = document.getElementById('menu-overlay');
+
+
+menuButton.addEventListener('click', () => {
+mobileMenu.classList.remove('translate-x-full');
+mobileMenu.classList.add('translate-x-0');
+menuOverlay.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+
+
+function closeMenu() {
+mobileMenu.classList.remove('translate-x-0');
+mobileMenu.classList.add('translate-x-full');
+menuOverlay.classList.add('hidden');
+document.body.style.overflow = '';
+}
+
+
+closeButton.addEventListener('click', closeMenu);
+menuOverlay.addEventListener('click', closeMenu);
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') closeMenu();
+});
+});
+</script>
+
+</body>
+</html>
