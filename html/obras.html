@@ -117,10 +117,10 @@
 
 <!-- NAV DESKTOP -->
 <div class="hidden lg:flex items-center space-x-8">
-<a href="/index.html" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Inicio</a>
-<a href="/html/obras.html" class="text-primary-dark font-bold border-b-2 border-primary-dark transition duration-200">Obras</a>
-<a href="/index.html#contacto" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Contacto</a>
-<a href="/index.html#contacto" class="bg-accent-blue text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold shadow-md">Solicitar Cotización</a>
+<a href="../index.html" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Inicio</a>
+<a href="../html/obras.html" class="text-primary-dark font-bold border-b-2 border-primary-dark transition duration-200">Obras</a>
+<a href="../index.html#contacto" class="text-text-dark hover:text-primary-dark transition duration-200 font-medium">Contacto</a>
+<a href="../index.html#contacto" class="bg-accent-blue text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300 font-semibold shadow-md">Solicitar Cotización</a>
 </div>
 
 
@@ -150,11 +150,27 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 </button>
 </div>
 <nav class="flex flex-col space-y-4 flex-grow">
-<a href="/index.html" class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">Inicio</a>
-<a href="/html/obras.html" class="text-lg text-primary-dark font-bold p-2 rounded-lg bg-gray-100">Obras</a>
-<a href="/index.html#contacto" class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">Contacto</a>
-<a href="/index.html#contacto" class="bg-accent-blue text-white text-center px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 mt-6 shadow-md text-lg font-semibold">Solicitar Cotización</a>
+  <a href="/pagina-web-de-empresa-constructora-norte-construcciones/index.html" 
+     class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">
+     Inicio
+  </a>
+
+  <a href="/pagina-web-de-empresa-constructora-norte-construcciones/html/obras.html" 
+     class="text-lg text-primary-dark font-bold p-2 rounded-lg bg-gray-100">
+     Obras
+  </a>
+
+  <a href="/pagina-web-de-empresa-constructora-norte-construcciones/index.html#contacto" 
+     class="text-lg text-text-dark hover:text-primary-dark transition duration-200 font-medium p-2 rounded-lg hover:bg-gray-50">
+     Contacto
+  </a>
+
+  <a href="/pagina-web-de-empresa-constructora-norte-construcciones/index.html#contacto" 
+     class="bg-accent-blue text-white text-center px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-300 mt-6 shadow-md text-lg font-semibold">
+     Solicitar Cotización
+  </a>
 </nav>
+
 </div>
 </div>
 <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden lg:hidden" aria-hidden="true"></div>
@@ -172,7 +188,7 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
             </p>
         </div>
     </section>
-
+  
     <!-- Sección de Galería de Proyectos (The Grid) -->
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,14 +202,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
                 <!-- Tarjeta de Obra 1 (ID: 1) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal">
                     <!-- Placeholder de imagen (reemplazar con URL real) -->
-                    <img id="img-1" src="https://placehold.co/800x600/5c0d18/ffffff?text=Proyecto+Residencial" 
+                    <img id="img-1" src="../img/obra1.jpg" 
                          alt="Edificio de Viviendas de Lujo" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Edificio "Sol Naciente"</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Córdoba, Argentina</p>
                         <p class="text-gray-700 text-base">Desarrollo de 15 pisos con foco en sostenibilidad y eficiencia energética.</p>
-                        <button onclick="openModal(1)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(1)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -201,14 +217,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 2 (ID: 2) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.1s;">
-                    <img id="img-2" src="https://placehold.co/800x600/8d3e42/ffffff?text=Vialidad+Ruta+3" 
+                    <img id="img-2" src="../img/obra2.jpg" 
                          alt="Construcción de Autopista" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Ampliación de la Ruta Nacional 3</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Santa Cruz, Argentina</p>
                         <p class="text-gray-700 text-base">Doble calzada y nuevos puentes para mejorar la conectividad y seguridad vial.</p>
-                        <button onclick="openModal(2)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(2)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -216,14 +232,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 3 (ID: 3) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.2s;">
-                    <img id="img-3" src="https://placehold.co/800x600/5c0d18/ffffff?text=Sistema+de+Drenaje+Urbano" 
+                    <img id="img-3" src="../img/obra3.jpg" 
                          alt="Instalación de Drenaje Pluvial" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Sistema de Desagües Pluviales "El Chaco"</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Resistencia, Chaco</p>
                         <p class="text-gray-700 text-base">Implementación de canales subterráneos para mitigar inundaciones urbanas.</p>
-                        <button onclick="openModal(3)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(3)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -231,14 +247,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 4 (ID: 4) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.3s;">
-                    <img id="img-4" src="https://placehold.co/800x600/8d3e42/ffffff?text=Planta+Industrial" 
+                    <img id="img-4" src="../img/obra4.jpg" 
                          alt="Construcción de Nave Industrial" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Nave Logística "Puerto Seco"</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Mendoza, Argentina</p>
                         <p class="text-gray-700 text-base">Construcción de un centro de distribución de 15.000 m² con altos estándares de seguridad.</p>
-                        <button onclick="openModal(4)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(4)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -246,14 +262,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
                 
                 <!-- Tarjeta de Obra 5 (ID: 5) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.4s;">
-                    <img id="img-5" src="https://placehold.co/800x600/5c0d18/ffffff?text=Remodelacion+Corporativa" 
+                    <img id="img-5" src="../img/obra1.jpg" 
                          alt="Remodelación de Oficinas" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Oficinas Corporativas "Torre Pampa"</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Buenos Aires, CABA</p>
                         <p class="text-gray-700 text-base">Rediseño interior de 5 plantas con enfoque en espacios colaborativos y tecnología.</p>
-                        <button onclick="openModal(5)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(5)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -261,14 +277,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 6 (ID: 6) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.5s;">
-                    <img id="img-6" src="https://placehold.co/800x600/8d3e42/ffffff?text=Plaza+Pública" 
+                    <img id="img-6" src="../img/obra2.jpg" 
                          alt="Construcción de Plaza" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Parque Urbano "Los Tilos"</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Rosario, Santa Fe</p>
                         <p class="text-gray-700 text-base">Creación de un espacio verde de 2 hectáreas con equipamiento deportivo e infantil.</p>
-                        <button onclick="openModal(6)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(6)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -276,14 +292,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 7 (ID: 7) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.6s;">
-                    <img id="img-7" src="https://placehold.co/800x600/5c0d18/ffffff?text=Cimientos+Especiales" 
+                    <img id="img-7" src="../img/obra3.jpg" 
                          alt="Cimentación Profunda" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Cimientos para Torres Eólicas</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Puerto Madryn, Chubut</p>
                         <p class="text-gray-700 text-base">Ejecución de bases de hormigón armado para parque de energía eólica.</p>
-                        <button onclick="openModal(7)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(7)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -291,14 +307,14 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
 
                 <!-- Tarjeta de Obra 8 (ID: 8) -->
                 <div class="bg-bg-light rounded-xl overflow-hidden shadow-lg border border-gray-100 project-card reveal" style="transition-delay: 0.7s;">
-                    <img id="img-8" src="https://placehold.co/800x600/8d3e42/ffffff?text=Puente+Vial" 
+                    <img id="img-8" src="../img/obra4.jpg" 
                          alt="Construcción de Puente" 
                          class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-semibold text-primary-dark mb-2">Puente sobre el Río Paraná</h3>
                         <p class="text-gray-600 text-sm mb-4">Ubicación: Corrientes, Argentina</p>
                         <p class="text-gray-700 text-base">Diseño y construcción de una estructura de 400 metros de extensión.</p>
-                        <button onclick="openModal(8)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80">
+                        <button onclick="openModal(8)" class="mt-4 text-sm font-medium text-accent-blue hover:text-accent-blue/80 p-10">
                             Ver Detalles &rarr;
                         </button>
                     </div>
@@ -380,9 +396,9 @@ stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lu
         <div>
           <h5 class="text-lg font-semibold mb-4 border-b border-white/30 pb-2">Enlaces Rápidos</h5>
           <ul class="space-y-2 text-sm">
-            <li><a href="/index.html" class="hover:text-accent-blue transition duration-150">Inicio</a></li>
-            <li><a href="/html/obras.html" class="text-accent-blue font-bold">Nuestras Obras</a></li>
-            <li><a href="/index.html#servicios" onclick="showToast('Sección de Servicios no implementada')" class="hover:text-accent-blue transition duration-150">Servicios</a></li>
+            <li><a href="../index.html" class="hover:text-accent-blue transition duration-150">Inicio</a></li>
+            <li><a href="../html/obras.html" class="text-accent-blue font-bold">Nuestras Obras</a></li>
+            <li><a href="../index.html#servicios" onclick="showToast('Sección de Servicios no implementada')" class="hover:text-accent-blue transition duration-150">Servicios</a></li>
             <!-- Enlace de Contacto en Footer ACTUALIZADO -->
             <li><a href="mailto:norteconstruccionesinfo@gmail.com" class="hover:text-accent-blue transition duration-150">Contacto</a></li>
           </ul>

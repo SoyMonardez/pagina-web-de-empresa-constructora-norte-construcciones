@@ -114,6 +114,13 @@
       transform: translateY(0);
       opacity: 1;
     }
+    .carousel .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+  }
+
   </style>
   <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
@@ -325,30 +332,61 @@
     </div>
 </section>
 
-      <section id="socios" class="py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h3 class="text-xl md:text-2xl font-semibold text-gray-600 mb-10 reveal">Orgullosos de trabajar con el gobierno y empresas líderes de la región.</h3>
-          <div class="carousel relative reveal" style="transition-delay: 0.1s;">
-            <div class="carousel-track" tabindex="0">
-              <div class="carousel-group flex items-center gap-8 md:gap-12">
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo A</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo B</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo C</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo D</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo E</div>
-              </div>
-              <div class="carousel-group flex items-center gap-8 md:gap-12" aria-hidden="true">
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo A</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo B</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo C</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo D</div>
-                <div class="logo w-20 h-20 md:w-28 md:h-28 bg-yellow-600/50 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">Logo E</div>
-              </div>
-            </div>
+      <!-- ================== CARRUSEL DE SOCIOS ================== -->
+<section id="socios" class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h3 class="text-xl md:text-2xl font-semibold text-gray-600 mb-10 reveal">
+      Orgullosos de trabajar con el gobierno y empresas líderes de la región.
+    </h3>
+
+    <div class="carousel relative reveal" style="transition-delay: 0.1s;">
+      <div class="carousel-track" tabindex="0">
+        <!-- Primer grupo -->
+        <div class="carousel-group flex items-center gap-8 md:gap-12">
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
+            <img src="img/angaco.png" alt="Logo Municipalidad de Angaco">
           </div>
-          <div class="mt-12 reveal" style="transition-delay: 0.2s;"><hr class="border-gray-300 max-w-lg mx-auto"></div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/chimbas1.jpeg" alt="Logo Norte Construcciones">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/capita.jpeg" alt="Cliente 1">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/san luis.png" alt="Cliente 2">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/angaco.png" alt="Cliente 3">
+          </div>
         </div>
-      </section>
+
+        <!-- Segundo grupo (duplicado para efecto infinito) -->
+        <div class="carousel-group flex items-center gap-8 md:gap-12" aria-hidden="true">
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/chimbas1.jpeg" alt="Logo Municipalidad de Angaco">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/capita.jpeg" alt="Logo Norte Construcciones">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/san luis.png" alt="Cliente 1">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/angaco.png" alt="Cliente 2">
+          </div>
+          <div class="logo w-20 h-20 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <img src="img/capita.jpeg" alt="Cliente 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 reveal" style="transition-delay: 0.2s;">
+      <hr class="border-gray-300 max-w-lg mx-auto">
+    </div>
+  </div>
+</section>
+
 
       <section id="servicios" class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
