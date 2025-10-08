@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>Norte Construcciones | Todas Nuestras Obras y Proyectos Completos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="description" content="Explora la galería completa de proyectos de ingeniería civil y arquitectura de Norte Construcciones en Argentina.">
-  
-  <link rel="canonical" href="https://www.norteconstrucciones.com.ar/obras.html">
+  <!-- 🔎 SEO -->
+  <title>Norte Construcciones | Obras y Proyectos de Ingeniería Civil en San Juan</title>
+  <meta name="description" content="Explorá la galería completa de obras y proyectos realizados por Norte Construcciones: ingeniería civil, arquitectura y obras públicas en San Juan, Argentina.">
+  <meta name="keywords" content="obras, proyectos, empresa constructora, ingeniería civil, arquitectura, construcción, San Juan, Argentina, Norte Construcciones">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/html/obras.html">
 
-  <meta property="og:title" content="Norte Construcciones | Galería de Obras">
-  <meta property="og:description" content="Mira todos los trabajos realizados por nuestro equipo de expertos.">
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Norte Construcciones | Obras y Proyectos en Argentina">
+  <meta property="og:description" content="Mirá los proyectos de arquitectura e ingeniería civil de Norte Construcciones realizados en toda la provincia de San Juan.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.norteconstrucciones.com.ar/obras.html">
-  <!-- Reemplaza con una imagen representativa de la galería de obras -->
-  <meta property="og:image" content="https://www.norteconstrucciones.com.ar/img/obras_hero.jpg">
+  <meta property="og:url" content="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/html/obras.html">
+  <meta property="og:image" content="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/img/obra1.jpg">
+  <meta property="og:locale" content="es_AR">
 
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Norte Construcciones | Obras y Proyectos en San Juan">
+  <meta name="twitter:description" content="Explorá los trabajos más destacados de Norte Construcciones en ingeniería civil y arquitectura.">
+  <meta name="twitter:image" content="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/img/obra1.jpg">
+
+  <!-- 📱 Iconos -->
+  <link rel="icon" href="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/img/logo.png">
+
+  <!-- 🏗️ Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Obras y Proyectos de Norte Construcciones",
+    "url": "https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/html/obras.html",
+    "description": "Galería de obras y proyectos de Norte Construcciones en San Juan, Argentina.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Norte Construcciones",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/img/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- ⚡ Tailwind y librerías -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    // Configuración de Tailwind para mantener los colores originales
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             'primary-dark': '#5c0d18',
             'primary-light': '#8d3e42',
-            'accent-blue': '#60a5fa', // Un azul claro de Tailwind
-            'bg-light': '#fefefe', // Fondo muy claro
-            'text-dark': '#1f2937', // Texto oscuro
+            'accent-blue': '#60a5fa',
+            'bg-light': '#fefefe',
+            'text-dark': '#1f2937',
           },
           fontFamily: {
             sans: ['Inter', 'sans-serif'],
@@ -37,45 +69,40 @@
       }
     }
   </script>
-  <!-- Fuente Inter desde Google Fonts -->
+
+  <!-- 🖋️ Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  
-  <!-- Estilos CSS personalizados para animaciones y Modal -->
+
+  <!-- 🎨 Estilos personalizados -->
   <style>
-    /* Animación de entrada para el efecto Scroll Reveal */
     .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
     .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-    /* Estilo para el header fijo */
     .header-fixed {
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     }
-    /* Estilo para el botón principal (Ver más obras) */
     .btn-primary {
-        transition: background-color 0.3s, transform 0.2s;
+      transition: background-color 0.3s, transform 0.2s;
     }
     .btn-primary:hover {
-        transform: translateY(-2px);
+      transform: translateY(-2px);
     }
     .btn-primary:active {
-        transform: translateY(0);
+      transform: translateY(0);
     }
-    /* Estilo para el card de obra */
     .project-card {
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
     .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 15px -3px rgba(92, 13, 24, 0.3), 0 4px 6px -4px rgba(92, 13, 24, 0.1);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(92, 13, 24, 0.3), 0 4px 6px -4px rgba(92, 13, 24, 0.1);
     }
-
-    /* Estilos para la Modal (oculto por defecto) */
     #project-modal {
       visibility: hidden;
       opacity: 0;
@@ -92,17 +119,17 @@
     #project-modal.open #modal-content {
       transform: translateY(0);
     }
-    /* Estilos para el Menú Móvil -- corregido: no forzar transform para no interferir con utilidades de Tailwind */
-    /* La posición la controlan las clases de Tailwind: translate-x-full / translate-x-0 */
     #mobile-menu {
-        transition: transform 0.3s ease-in-out, opacity 0.3s;
-        /* no 'transform' aquí */
-        opacity: 1;
+      transition: transform 0.3s ease-in-out, opacity 0.3s;
+      opacity: 1;
     }
-    html { overflow-y: scroll; scroll-behavior: smooth; }
+    html {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+    }
   </style>
-  <link rel="icon" type="image/x-icon" href="../favicon.png">
 </head>
+
 
 <body class="font-sans bg-bg-light text-text-dark">
 

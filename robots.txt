@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/sitemap.xml

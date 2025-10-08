@@ -1,0 +1,16 @@
+{
+  "name": "Norte Construcciones",
+  "short_name": "Norte Construcciones",
+  "start_url": "https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5c0d18",
+  "description": "Empresa constructora especializada en ingeniería civil y arquitectura en San Juan, Argentina.",
+  "icons": [
+    {
+      "src": "https://soymonardez.github.io/pagina-web-de-empresa-constructora-norte-construcciones/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

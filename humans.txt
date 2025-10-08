@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Samuel Lepez
+Designer: Norte Construcciones Web Team
+From: Argentina
+Contact: contacto@norteconstrucciones.com.ar
+
+/* SITE */
+Last update: 2025-10-08
+Language: Spanish
+Doctype: HTML5
